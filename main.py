@@ -3,7 +3,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from models import Product
-from database import session
+from database import SessionLocal
 
 app = FastAPI()
 
@@ -26,7 +26,7 @@ products = [
 def get_all_products():
     #we will be connecting the database here
     #query
-    db = session()
+    db = SessionLocal()
     db.query()
     return products
 
